@@ -9,8 +9,7 @@ module.exports = function() {
     todo.add({description: "buy milk"}, function() {});
     todo.update({id: 1, done: true}, function() {});
     
-    api.section("todo")
-        .get("/", todo.list.bind(todo))
+    api.section("todo").get("/", todo.list.bind(todo))
         .put("/", {
             params: {
                 description: {
@@ -60,7 +59,7 @@ Todo.prototype.add = function(params, callback) {
         done: false,
         description: params.description
     };
-    callback(null, this.items[id]);
+    callback(null, { id: params.id });
 };
 Todo.prototype.update = function(params, callback) {
     var item = this.items[params.id];
