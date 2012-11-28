@@ -1,10 +1,16 @@
 "use strict";
 
+var Route = require("./route");
+var Section = require("./section");
+var middleware = require("./api-middleware");
 var api = require("./lib/api");
 
 module.exports = function(description) {
     return new api.Api(description);
 };
 
-for (var key in api)
-    module.exports[key] = api[key];
+module.exports.Section = Section;
+module.exports.Route = Route;
+module.exports.midleware = middleware;
+
+
