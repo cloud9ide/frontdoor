@@ -2,7 +2,7 @@
 
 var Route = require("./route");
 var Section = require("./section");
-var middleware = require("./api-middleware");
+var middleware = require("./middleware");
 var api = require("./lib/api");
 
 module.exports = function(description) {
