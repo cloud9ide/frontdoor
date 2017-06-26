@@ -8,7 +8,7 @@
   ],
   "name": "frontdoor",
   "description": "Frontdoor is a libarary for creating RESTful API servers.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "release": "npm run lint && npm run cov && npm run assert-cov",
     "test": "./node_modules/.bin/mocha 'lib/**/*_test.js'",
