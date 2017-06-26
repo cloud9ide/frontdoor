@@ -10,8 +10,9 @@
   "description": "Frontdoor is a libarary for creating RESTful API servers.",
   "version": "0.0.2",
   "scripts": {
-    "release": "npm run cov && npm run assert-cov",
+    "release": "npm run lint && npm run cov && npm run assert-cov",
     "test": "./node_modules/.bin/mocha 'lib/**/*_test.js'",
+    "lint": "./node_modules/.bin/eslint --max-warnings 0 frontdoor.js lib/",
     "cov": "./node_modules/.bin/nyc -r text -r html npm run test",
     "assert-cov": "./node_modules/.bin/nyc check-coverage --branches 70 --lines 80"
   },
