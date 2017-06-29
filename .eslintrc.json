@@ -1,0 +1,45 @@
+{
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "before": true,
+        "describe": true,
+        "it": true,
+        "define": true
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-console": [
+            "error", { 
+                "allow": ["error"]
+            }
+        ],
+        "no-unused-vars": [
+            2, {
+                "vars": "all",
+                "args": "none"
+            }
+        ]
+    }
+}

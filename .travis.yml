@@ -1,4 +1,7 @@
 language: node_js
+script: npm run release
 node_js:
-  - 0.8
-  - 0.6
+  - 4
+  - 6
+  - 8
+  - node
