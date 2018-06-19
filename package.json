@@ -8,13 +8,15 @@
   ],
   "name": "frontdoor",
   "description": "Frontdoor is a libarary for creating RESTful API servers.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
-    "release": "npm run lint && npm run cov && npm run assert-cov",
-    "test": "./node_modules/.bin/mocha 'lib/**/*_test.js'",
-    "lint": "./node_modules/.bin/eslint --max-warnings 0 frontdoor.js lib/",
-    "cov": "./node_modules/.bin/nyc -r text -r html npm run test",
-    "assert-cov": "./node_modules/.bin/nyc check-coverage --branches 70 --lines 80"
+    "release": "run-s test",
+    "test": "run-s 'test:*'",
+    "test:unit": "nyc -r text -r html mocha 'lib/**/*_test.js'",
+    "test:lint": "eslint --max-warnings 0 frontdoor.js lib/",
+    "test:coverage": "nyc check-coverage --branches 70 --lines 80",
+    "test:prettier": "prettier --list-different '**/*.js'",
+    "fix": "prettier --write '**/*.js'"
   },
   "licenses": [
     {
@@ -33,8 +35,7 @@
   "dependencies": {
     "amd-loader": "~0.0.5",
     "debug": "^2.6.8",
-    "http-error": "~0.0.1",
-    "request": "~2.12.0"
+    "http-error": "~0.0.1"
   },
   "devDependencies": {
     "assert-diff": "^1.2.0",
@@ -42,7 +43,9 @@
     "eslint": "^4.1.1",
     "express": "3.0.3",
     "mocha": "^3.4.2",
+    "npm-run-all": "^4.1.3",
     "nyc": "^11.0.3",
+    "prettier": "^1.13.5",
     "sinon": "~1.3.0"
   }
 }

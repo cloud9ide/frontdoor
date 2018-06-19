@@ -1,0 +1,6 @@
+.c9/
+.c9revisions/
+.git/
+.nyc_output/
+coverage/
+node_modules/
