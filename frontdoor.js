@@ -16,5 +16,3 @@ module.exports.Section = Section;
 module.exports.Route = Route;
 module.exports.Types = Types;
 module.exports.middleware = middleware;
-
-
